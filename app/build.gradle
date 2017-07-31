@@ -87,6 +87,15 @@ dependencies {
     compile rootProject.ext.libraries.design
     compile rootProject.ext.libraries.support
 
+    compile rootProject.ext.libraries.calligraphy
+
+
+    compile rootProject.ext.libraries.butterKnife
+    annotationProcessor rootProject.ext.libraries.butterKnifeAnnotation
+
+
+
+
     testCompile rootProject.ext.libraries.junit
 
 }
