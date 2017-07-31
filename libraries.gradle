@@ -1,0 +1,55 @@
+ext {
+    minSdkVersion = 15
+    targetSdkVersion = 26
+    compileSdkVersion = 26
+    buildToolsVersion = "26.0.1"
+
+    appCompatVertsion = "26.+"
+    firebaseVersion = "10.0.1"
+
+    libraries = [
+
+            appCompat            : "com.android.support:appcompat-v7:${appCompatVertsion}",
+            design               : "com.android.support:design:${appCompatVertsion}",
+            recyclerView         : "com.android.support:recyclerview-v7:${appCompatVertsion}",
+            cardView             : "com.android.support:cardview-v7:${appCompatVertsion}",
+            support              : "com.android.support:support-v4:${appCompatVertsion}",
+
+            calligraphy          : "uk.co.chrisjenx:calligraphy:2.3.0",
+
+            customTab            : "com.android.support:customtabs:${appCompatVertsion}",
+            circleIndicator      : "me.relex:circleindicator:1.2.2",
+            circleImageView      : "de.hdodenhof:circleimageview:2.1.0",
+            rippleEffect         : "com.github.traex.rippleeffect:library:1.3",
+            glide                : "com.github.bumptech.glide:glide:3.7.0",
+            downloader           : "com.coolerfall:android-http-download-manager:1.6.1",
+
+
+            retrofit             : "com.squareup.retrofit2:retrofit:2.1.0",
+            gsonConvertor        : "com.squareup.retrofit2:converter-gson:2.1.0",
+            okhttp               : "com.squareup.okhttp3:okhttp:3.4.2",
+
+            gson                 : "com.google.code.gson:gson:2.8.1",
+
+            stethoOkhttp         : "com.facebook.stetho:stetho-okhttp3:1.4.2",
+            stetho               : "com.facebook.stetho:stetho:1.4.2",
+
+            realm                : "com.uphyca:stetho_realm:2.0.0",
+            exoPlayer            : "com.jarvanmo:exoplayerview:1.0.7",
+
+            butterKnife          : "com.jakewharton:butterknife:8.5.1",
+            butterKnifeAnnotation: "com.jakewharton:butterknife-compiler:8.5.1",
+
+            fbMessage            : "com.google.firebase:firebase-messaging:${firebaseVersion}",
+            fbConfig             : "com.google.firebase:firebase-config:${firebaseVersion}",
+            fbCrash              : "com.google.firebase:firebase-crash:${firebaseVersion}",
+
+//            suger                : "com.github.satyan:sugar:1.3",
+            greenDao             : "org.greenrobot:greendao:3.2.2",
+            sqlCipher            : "net.zetetic:android-database-sqlcipher:3.5.6",
+            circleImageView      : "de.hdodenhof:circleimageview:2.1.0",
+            circleProgress       : "com.github.jakob-grabner:Circle-Progress-View:v1.3"
+
+    ]
+
+}

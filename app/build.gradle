@@ -1,14 +1,23 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+
+    def majorVersion = 0
+    def minorVersion = 0
+    def patchVersion = 0
+
     defaultConfig {
         applicationId "ir.beigirad.zeroapplication"
-        minSdkVersion 15
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+
+        versionCode majorVersion * 100000 + minorVersion * 1000 + patchVersion
+        versionName "${majorVersion}.${minorVersion}.${patchVersion}"
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -24,6 +33,12 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:26.+'
+
+
+    compile rootProject.ext.libraries.appCompat
+    compile rootProject.ext.libraries.design
+    compile rootProject.ext.libraries.support
+
     testCompile 'junit:junit:4.12'
+
 }
