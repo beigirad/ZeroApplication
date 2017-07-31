@@ -26,6 +26,54 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    productFlavors {
+        normal {
+        }
+        demo {
+            applicationIdSuffix ".demo"
+        }
+    }
+
+    if (project.hasProperty("myproject.properties") && new File(project.property("myproject.properties")).exists()) {
+        Properties props = new Properties()
+        props.load(new FileInputStream(file(project.property("myproject.properties"))))
+        signingConfigs {
+            release {
+                storeFile file(props['storeFile'])
+                storePassword props['storePassword']
+                keyAlias props['keyAlias']
+                keyPassword props['keyPassword']
+            }
+        }
+    }
+    buildTypes.release.signingConfig = signingConfigs.release
+
+
+    applicationVariants.all { variant ->
+        def appName
+        if (project.hasProperty("applicationName")) {
+            appName = "${applicationName}"
+        } else {
+            appName = parent.name
+        }
+        variant.outputs.each { output ->
+            def newApkFile
+            newApkFile = "${appName}-${output.baseName}-${variant.versionName}.apk"
+            output.outputFile = new File(output.outputFile.parent, newApkFile)
+        }
+    }
+
+
+    splits {
+        abi {
+            enable true
+            reset()
+            include "armeabi-v7a"
+        }
+    }
+
+
 }
 
 dependencies {
