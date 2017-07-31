@@ -48,8 +48,13 @@ ext {
             greenDao             : "org.greenrobot:greendao:3.2.2",
             sqlCipher            : "net.zetetic:android-database-sqlcipher:3.5.6",
             circleImageView      : "de.hdodenhof:circleimageview:2.1.0",
-            circleProgress       : "com.github.jakob-grabner:Circle-Progress-View:v1.3"
+            circleProgress       : "com.github.jakob-grabner:Circle-Progress-View:v1.3",
 
+            ////////////////////////////////////////////////////////////////////////////////
+            //////////////     TEST
+            ////////////////////////////////////////////////////////////////////////////////
+
+            junit                : "junit:junit:4.12"
     ]
 
 }

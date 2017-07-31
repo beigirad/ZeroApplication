@@ -87,6 +87,6 @@ dependencies {
     compile rootProject.ext.libraries.design
     compile rootProject.ext.libraries.support
 
-    testCompile 'junit:junit:4.12'
+    testCompile rootProject.ext.libraries.junit
 
 }
