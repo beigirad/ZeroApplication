@@ -1,4 +1,22 @@
 <resources>
     <string name="app_name">Zero Application</string>
     <string name="title_activity_main">MainActivity</string>
+
+    <string name="phone_number">شماره تلفن</string>
+    <string name="require_phone">شماره تلفن شما برای ورود و احراز هویت الزامی ست.</string>
+    <string name="submit_phone">ثبت شماره</string>
+    <string name="phone_not_valid">شماره تلفن معتبر نیست.</string>
+    <string name="submit_code">ثبت کد</string>
+    <string name="code_number">کد دریافتی</string>
+    <string name="require_code">لحظاتی صبر کنید تا پیامک حاوی کد تاییدیه برایتان ارسال شود.</string>
+    <string name="code_sent">کد به شماره زیر ارسال شد.</string>
+    <string name="code_not_valid">کد وارد شده صحیح نیست.</string>
+
+    <string name="name">نام</string>
+    <string name="family">نام خانوادگی</string>
+    <string name="invalid_name">نام باید شامل سه  کاراکتر باشد.</string>
+    <string name="invalid_family">نام خانوادگی باید حداقل شامل سه کاراکتر باشدو</string>
+    <string name="coninute_">ادامه</string>
+
+
 </resources>

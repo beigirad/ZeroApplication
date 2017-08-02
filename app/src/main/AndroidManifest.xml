@@ -12,12 +12,12 @@
         android:theme="@style/AppTheme.NoActionBar">
 
 
-        <activity android:name=".MainActivity" />
-
+        <activity android:name=".ui.MainActivity" />
+        <activity android:name=".authentication.LoginActivity" />
 
         <activity-alias
             android:name="MainActivity"
-            android:targetActivity=".MainActivity">
+            android:targetActivity=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

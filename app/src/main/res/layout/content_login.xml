@@ -5,7 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="ir.beigirad.zeroapplication.ui.MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:context="ir.beigirad.zeroapplication.authentication.LoginActivity"
+    tools:showIn="@layout/activity_login">
+<FrameLayout
+    android:id="@+id/login_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
+
+</FrameLayout>
 </RelativeLayout>

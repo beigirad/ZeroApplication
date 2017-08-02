@@ -1,10 +1,13 @@
 package ir.beigirad.zeroapplication.network;
 
-import okhttp3.RequestBody;
-import okhttp3.ResponseBody;
+import ir.beigirad.zeroapplication.model.SendCodeRequest;
+import ir.beigirad.zeroapplication.model.SendCodeResponse;
+import ir.beigirad.zeroapplication.model.SendInfoRequest;
+import ir.beigirad.zeroapplication.model.SendInfoResponse;
+import ir.beigirad.zeroapplication.model.SendPhoneNumberRequest;
+import ir.beigirad.zeroapplication.model.SendPhoneNumberResponse;
 import retrofit2.Call;
 import retrofit2.http.Body;
-import retrofit2.http.Header;
 import retrofit2.http.POST;
 
 /**
@@ -13,14 +16,15 @@ import retrofit2.http.POST;
 
 public interface APIService {
 
-    @POST("...")
-    Call<ResponseBody> sendPhoneNumber(@Body RequestBody phoneNumberRequest);
 
-    @POST("...")
-    Call<ResponseBody> sendCode(@Body RequestBody codeRequest);
+    @POST("ideh-app-peyk60-login-customer/data")
+    Call<SendPhoneNumberResponse> sendPhoneNumber(@Body SendPhoneNumberRequest phoneNumberRequest);
 
-    @POST("...")
-    Call<ResponseBody> sendInfo(@Body RequestBody infoRequest);
+    @POST("ideh-app-peyk60-login-customer/data")
+    Call<SendCodeResponse> sendCode(@Body SendCodeRequest codeRequest);
+
+    @POST("ideh-app-peyk60-login-customer/data")
+    Call<SendInfoResponse> sendInfo(@Body SendInfoRequest infoRequest);
 
 
 

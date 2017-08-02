@@ -11,5 +11,9 @@
     <color name="icons">#FFFFFF</color>
     <color name="divider">#BDBDBD</color>
 
-    
+
+    <color name="okButtonColor">#4caf50</color>
+    <color name="greenColor">#4caf50</color>
+
+
 </resources>

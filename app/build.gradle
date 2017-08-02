@@ -86,6 +86,7 @@ dependencies {
     compile rootProject.ext.libraries.appCompat
     compile rootProject.ext.libraries.design
     compile rootProject.ext.libraries.support
+    compile rootProject.ext.libraries.cardView
 
     compile rootProject.ext.libraries.calligraphy
     compile rootProject.ext.libraries.lovelyDialog
