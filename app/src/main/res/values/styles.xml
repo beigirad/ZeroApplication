@@ -48,4 +48,21 @@
         <item name="android:textSize">10sp</item>
     </style>
 
+    <style name="LightText..XLargeText" parent="LightText">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="LightText.LargeText" parent="LightText">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="LightText.MediumText" parent="LightText">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="LightText.Small" parent="LightText">
+        <item name="android:textSize">10sp</item>
+    </style>
+
 </resources>
