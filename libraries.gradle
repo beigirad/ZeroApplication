@@ -16,6 +16,7 @@ ext {
             support              : "com.android.support:support-v4:${appCompatVertsion}",
 
             calligraphy          : "uk.co.chrisjenx:calligraphy:2.3.0",
+            lovelyDialog         : "com.yarolegovich:lovely-dialog:1.0.7",
 
             customTab            : "com.android.support:customtabs:${appCompatVertsion}",
             circleIndicator      : "me.relex:circleindicator:1.2.2",

@@ -88,6 +88,7 @@ dependencies {
     compile rootProject.ext.libraries.support
 
     compile rootProject.ext.libraries.calligraphy
+    compile rootProject.ext.libraries.lovelyDialog
 
 
     compile rootProject.ext.libraries.retrofit
