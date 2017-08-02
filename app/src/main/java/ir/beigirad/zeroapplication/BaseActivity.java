@@ -32,8 +32,11 @@ public abstract class BaseActivity extends AppCompatActivity{
             getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
         }
 
+        initVariables();
 
         initToolbar();
+        initUI();
+
     }
 
     @Override
@@ -41,6 +44,14 @@ public abstract class BaseActivity extends AppCompatActivity{
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
 
+
+    protected void initVariables() {
+        
+    }
+
+    protected void initUI() {
+
+    }
 
     protected void initToolbar() {
         mToolbar.setTitle(getToolbarTitle());
@@ -63,6 +74,5 @@ public abstract class BaseActivity extends AppCompatActivity{
         }
         return true;
     }
-
-
 }
+
