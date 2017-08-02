@@ -1,4 +1,4 @@
-package ir.beigirad.zeroapplication;
+package ir.beigirad.zeroapplication.component;
 
 import android.content.Context;
 import android.os.Build;
@@ -10,6 +10,7 @@ import android.view.View;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import ir.beigirad.zeroapplication.R;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 /**
@@ -46,7 +47,7 @@ public abstract class BaseActivity extends AppCompatActivity{
 
 
     protected void initVariables() {
-        
+
     }
 
     protected void initUI() {
