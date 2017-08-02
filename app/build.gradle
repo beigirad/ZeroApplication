@@ -90,6 +90,12 @@ dependencies {
     compile rootProject.ext.libraries.calligraphy
 
 
+    compile rootProject.ext.libraries.retrofit
+    compile rootProject.ext.libraries.gsonConvertor
+    compile rootProject.ext.libraries.stethoOkhttp
+
+
+
     compile rootProject.ext.libraries.butterKnife
     annotationProcessor rootProject.ext.libraries.butterKnifeAnnotation
 
