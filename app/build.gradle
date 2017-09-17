@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -106,4 +107,9 @@ dependencies {
 
     testCompile rootProject.ext.libraries.junit
 
+    compile rootProject.ext.kotlinLibraries.kotlin
+
+}
+repositories {
+    mavenCentral()
 }
