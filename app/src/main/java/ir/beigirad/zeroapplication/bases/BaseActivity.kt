@@ -1,8 +1,7 @@
-package ir.beigirad.zeroapplication.base
+package ir.beigirad.zeroapplication.bases
 
 import android.app.ProgressDialog
 import android.content.Context
-import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Build
 import android.os.Bundle
@@ -11,7 +10,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import ir.beigirad.app.R
-import ir.beigirad.zeroapplication.utils.SharedPrefUtils
+import ir.beigirad.zeroapplication.util.SharedPrefUtils
 import ir.beigirad.zeroapplication.widget.CenterToolbar
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper
 

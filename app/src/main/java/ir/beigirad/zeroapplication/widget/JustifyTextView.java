@@ -15,6 +15,7 @@ import android.widget.TextView;
  * Created by farhad-mbp on 8/25/17.
  */
 
+@SuppressWarnings("DefaultFileTemplate")
 public class JustifyTextView extends android.support.v7.widget.AppCompatTextView {
     private Paint paint = new Paint();
 

@@ -13,11 +13,11 @@ import android.view.ViewConfiguration
  */
 
 class RecyclerViewEmptySupport : RecyclerView {
-    constructor(context: Context) : super(context) {}
+    constructor(context: Context) : super(context)
 
-    constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {}
+    constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
 
-    constructor(context: Context, attrs: AttributeSet, defStyle: Int) : super(context, attrs, defStyle) {}
+    constructor(context: Context, attrs: AttributeSet, defStyle: Int) : super(context, attrs, defStyle)
 
 
     //region handle empty place holder
@@ -72,7 +72,7 @@ class RecyclerViewEmptySupport : RecyclerView {
     private var x: Int = 0
     private var y: Int = 0
     // this will help us to understand whether the event can be considered a touch or scroll
-    private val delta: Int = ViewConfiguration.get(getContext()).scaledTouchSlop
+    private val delta: Int = ViewConfiguration.get(context).scaledTouchSlop
 
     override fun onTouchEvent(e: MotionEvent?): Boolean {
         val onTouchEvent = super.onTouchEvent(e)

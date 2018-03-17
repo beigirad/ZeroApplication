@@ -1,4 +1,4 @@
-package ir.beigirad.zeroapplication.utils
+package ir.beigirad.zeroapplication.util
 
 import com.google.gson.Gson
 import okhttp3.ResponseBody

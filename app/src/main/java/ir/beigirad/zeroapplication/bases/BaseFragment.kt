@@ -1,4 +1,4 @@
-package ir.beigirad.zeroapplication.base
+package ir.beigirad.zeroapplication.bases
 
 import android.app.ProgressDialog
 import android.os.Bundle

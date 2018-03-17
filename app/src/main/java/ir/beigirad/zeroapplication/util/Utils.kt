@@ -89,17 +89,17 @@ class Utils {
                     isValid = false
                 }
             }
-            if (isValid) {
+            return if (isValid) {
                 if (til != null)
                     til.isErrorEnabled = false
-                return true
+                true
             } else {
                 if (til != null)
                     til.error = error
                 else
                     et.error = error
                 et.requestFocus()
-                return false
+                false
             }
 
 
@@ -115,7 +115,7 @@ class Utils {
 
         fun validatePass(et: EditText, til: TextInputLayout? = null, et_repeat: EditText, til_repeat: TextInputLayout? = null): Boolean {
             val text = et.text.toString().trim { it <= ' ' }
-            val text_repeat = et_repeat.text.toString().trim { it <= ' ' }
+            val textRepeat = et_repeat.text.toString().trim { it <= ' ' }
 
 
             if (!validateView(et, til))
@@ -123,7 +123,7 @@ class Utils {
             if (!validateView(et_repeat, til_repeat))
                 return false
             val error = ZeroApplication.getAppContext().resources.getString(R.string.password_not_same)
-            if (text != text_repeat) {
+            if (text != textRepeat) {
                 if (til != null)
                     til_repeat!!.error = error
                 else
@@ -277,35 +277,34 @@ class Utils {
 
         fun openSoftKeyboard(context: Context) {
             val inputMethodManager = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
+            inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY)
         }
 
         fun closeSoftKeyboard(context: Context) {
             val inputMethodManager = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            inputMethodManager.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, InputMethodManager.RESULT_UNCHANGED_SHOWN);
+            inputMethodManager.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, InputMethodManager.RESULT_UNCHANGED_SHOWN)
         }
 
         fun copyOnClipboard(text: String, label: String = "") {
             var clipboard = ZeroApplication.getAppContext().getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
             var clip = ClipData.newPlainText(label, text)
-            clipboard?.primaryClip = clip
+            clipboard.primaryClip = clip
         }
 
-        public fun convertDpToPixel(dp: Float, context: Context): Int {
+        fun convertDpToPixel(dp: Float, context: Context): Int {
             var resources = context.resources
             var metrics = resources.displayMetrics
             var px = dp * (metrics.densityDpi / DisplayMetrics.DENSITY_DEFAULT)
             return px.toInt()
         }
 
-        public fun convertPixelsToDp(px: Float, context: Context): Float {
+        fun convertPixelsToDp(px: Float, context: Context): Float {
             var resources = context.resources
             var metrics = resources.displayMetrics
-            var dp = px / (metrics.densityDpi / DisplayMetrics.DENSITY_DEFAULT)
-            return dp
+            return px / (metrics.densityDpi / DisplayMetrics.DENSITY_DEFAULT)
         }
 
-        public fun getScreenWidth(activity: Activity): Int {
+        fun getScreenWidth(activity: Activity): Int {
             var size = Point()
             activity.windowManager.defaultDisplay.getSize(size)
             return size.x

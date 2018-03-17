@@ -24,7 +24,7 @@ class RtlSnackbar {
         private var mGravity: Int = Gravity.BOTTOM
         private var mText: String = ""
         private var mBtnText: String? = null
-        private var mListener: snackClickListener? = null
+        private var mListener: SnackClickListener? = null
         private var mDuration: Int = Snackbar.LENGTH_LONG
 
         fun rootView(rootView: View): Builder {
@@ -37,7 +37,7 @@ class RtlSnackbar {
             return this
         }
 
-        fun btnText(btnText: String?, btnListener: snackClickListener?): Builder {
+        fun btnText(btnText: String?, btnListener: SnackClickListener?): Builder {
             mBtnText = btnText
             mListener = btnListener
             return this
@@ -94,11 +94,11 @@ class RtlSnackbar {
         layout.addView(snackView, 0)
     }
 
-    private fun addAction(btnText: CharSequence?, btnListener: snackClickListener?) {
-        val snackbar_button = snackView!!.findViewById<Button>(R.id.snackbar_button)
-        snackbar_button.text = btnText ?: ZeroApplication.getAppContext().getString(R.string.try_again)
-        snackbar_button.visibility = View.VISIBLE
-        snackbar_button.setOnClickListener {
+    private fun addAction(btnText: CharSequence?, btnListener: SnackClickListener?) {
+        val snackbarButton = snackView!!.findViewById<Button>(R.id.snackbar_button)
+        snackbarButton.text = btnText ?: ZeroApplication.getAppContext().getString(R.string.try_again)
+        snackbarButton.visibility = View.VISIBLE
+        snackbarButton.setOnClickListener {
             if (btnListener != null) {
                 btnListener.onSnackClickListener()
                 snackbar!!.dismiss()
@@ -106,7 +106,7 @@ class RtlSnackbar {
         }
     }
 
-    interface snackClickListener {
+    interface SnackClickListener {
         fun onSnackClickListener()
     }
 }

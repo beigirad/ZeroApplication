@@ -1,6 +1,6 @@
 package ir.beigirad.app
 
-import ir.beigirad.zeroapplication.base.BaseActivity
+import ir.beigirad.zeroapplication.bases.BaseActivity
 import ir.beigirad.zeroapplication.widget.CenterToolbar
 import kotlinx.android.synthetic.main.app_bar.*
 

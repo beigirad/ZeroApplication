@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 /**
  * Created by farhad-mbp on 11/4/17.
  */
-public class APIProvider {
+class APIProvider {
     private val BASE_URL = "http://46.32.17.139:9080"
 
     private var okHttpClient: OkHttpClient

@@ -1,4 +1,4 @@
-package ir.beigirad.zeroapplication.utils
+package ir.beigirad.zeroapplication.util
 
 import android.content.Context
 

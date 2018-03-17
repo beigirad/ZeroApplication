@@ -41,12 +41,11 @@ object ErrorUtils {
     fun parseFailure(throwable: Throwable?): APIFailError {
         var error: APIFailError? = null
         throwable?.message?.let {
-            error = if (throwable.message!!.contains("Failed to connect"))
-                APIFailError(ZeroApplication.getAppContext().getString(R.string.connecting_error), "")
-            else if (throwable.message!!.contains("unexpected end of stream on"))
-                APIFailError(ZeroApplication.getAppContext().getString(R.string.address_error), "")
-            else
-                APIFailError(ZeroApplication.getAppContext().getString(R.string.error) + ":" + throwable.message, "")
+            error = when {
+                throwable.message!!.contains("Failed to connect") -> APIFailError(ZeroApplication.getAppContext().getString(R.string.connecting_error), "")
+                throwable.message!!.contains("unexpected end of stream on") -> APIFailError(ZeroApplication.getAppContext().getString(R.string.address_error), "")
+                else -> APIFailError(ZeroApplication.getAppContext().getString(R.string.error) + ":" + throwable.message, "")
+            }
         }
         return error!!
     }

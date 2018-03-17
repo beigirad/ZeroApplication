@@ -1,4 +1,4 @@
-package ir.beigirad.zeroapplication.utils
+package ir.beigirad.zeroapplication.util
 
 /**
  * Created by farhad-mbp on 2/2/18.

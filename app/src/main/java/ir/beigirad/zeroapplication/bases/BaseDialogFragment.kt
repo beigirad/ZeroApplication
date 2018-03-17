@@ -1,4 +1,4 @@
-package ir.beigirad.zeroapplication.base
+package ir.beigirad.zeroapplication.bases
 
 //
 import android.app.Dialog
@@ -63,7 +63,7 @@ abstract class BaseDialogFragment : DialogFragment() {
         if (beFullScreen() && !Utils.isTablet)
             setStyle(DialogFragment.STYLE_NO_FRAME, R.style.AppTheme_NoActionBar)
         else
-            setStyle(DialogFragment.STYLE_NORMAL, R.style.AppTheme_NoActionBar_BaseDialog);
+            setStyle(DialogFragment.STYLE_NORMAL, R.style.AppTheme_NoActionBar_BaseDialog)
 
 
         initVariables()
