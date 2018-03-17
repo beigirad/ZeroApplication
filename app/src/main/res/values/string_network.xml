@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error">خطا</string>
+    <string name="unathorized_error">شما وارد حساب کاربری خود نشده اید.</string>
+    <string name="not_found_result">نتیجه ای یافت نشد</string>
+    <string name="unknown_response_error">عدم دریافت پاسخ صحیح از سرور</string>
+    <string name="connecting_error">عدم اتصال شبکه</string>
+    <string name="address_error">دامنه در دسترس نیست</string>
+    <string name="unknown_error">خطایی ناشناخته پیش آمده</string>
+
+</resources>

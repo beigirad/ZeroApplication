@@ -17,6 +17,11 @@
     <string name="invalid_name">نام باید شامل سه  کاراکتر باشد.</string>
     <string name="invalid_family">نام خانوادگی باید حداقل شامل سه کاراکتر باشدو</string>
     <string name="coninute_">ادامه</string>
-
+    <string name="try_again">تلاش مجدد</string>
+    <string name="app_title">زیرو اپ</string>
+    <string name="please_wait">صبر کنید</string>
+    <string name="input_not_valid">ورودی معتبر نیستند</string>
+    <string name="password_wrong">رمز عبور وارد شده اشتباه است</string>
+    <string name="password_not_same">رمزهای عبور وارد شده یکسان نیست</string>
 
 </resources>

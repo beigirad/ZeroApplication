@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TypographyStyle" parent="TextAppearance.AppCompat">
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textColorHint">#229922</item>
+        <item name="android:textSize">20sp</item>
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/icons</item>
+        <item name="colorControlActivated">@color/icons_active</item>
+    </style>
+
+    <style name="PrimaryDarkText" parent="TypographyStyle">
+        <item name="android:textColor">@color/primary_text</item>
+    </style>
+
+    <style name="SecondaryDarkText" parent="TypographyStyle">
+        <item name="android:textColor">@color/secondary_text</item>
+    </style>
+
+    <style name="LightText" parent="TypographyStyle">
+        <item name="android:textColor">@color/primary_text_light</item>
+    </style>
+
+
+    <style name="PrimaryDarkText.XLargeText">
+        <item name="android:textSize">@dimen/text_xlarge</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontPath">@string/font_bold</item>
+    </style>
+
+    <style name="PrimaryDarkText.LargeText">
+        <item name="android:textSize">@dimen/text_large</item>
+    </style>
+
+    <style name="PrimaryDarkText.MediumText">
+        <item name="android:textSize">@dimen/text_medium</item>
+    </style>
+
+    <style name="PrimaryDarkText.Small">
+        <item name="android:textSize">@dimen/text_small</item>
+    </style>
+
+
+    <style name="SecondaryDarkText.MediumText">
+        <item name="android:textSize">@dimen/text_medium</item>
+    </style>
+
+    <style name="SecondaryDarkText.Small">
+        <item name="android:textSize">@dimen/text_small</item>
+    </style>
+
+
+    <style name="LightText.XLargeText">
+        <item name="android:textSize">@dimen/text_xlarge</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="LightText.LargeText">
+        <item name="android:textSize">@dimen/text_large</item>
+    </style>
+
+    <style name="LightText.MediumText">
+        <item name="android:textSize">@dimen/text_medium</item>
+    </style>
+
+    <style name="LightText.Small">
+        <item name="android:textSize">@dimen/text_small</item>
+    </style>
+
+
+    <style name="LightText.MediumText.Bold">
+        <item name="fontPath">@string/font_bold</item>
+    </style>
+
+    <style name="LightText.XLargeText.Bold">
+        <item name="fontPath">@string/font_bold</item>
+    </style>
+
+    <style name="LightText.LargeText.Bold">
+        <item name="fontPath">@string/font_bold</item>
+    </style>
+
+    <style name="PrimaryDarkText.LargeText.Bold">
+        <item name="fontPath">@string/font_bold</item>
+    </style>
+
+    <style name="PrimaryDarkText.MediumText.Bold">
+        <item name="fontPath">@string/font_bold</item>
+    </style>
+
+    <style name="PrimaryDarkText.Small.Bold">
+        <item name="fontPath">@string/font_bold</item>
+    </style>
+
+    <style name="SecondaryDarkText.Small.Bold">
+        <item name="fontPath">@string/font_bold</item>
+    </style>
+
+
+    <!--<style name="PriceText">-->
+    <!--<item name="android:textSize">@dimen/text_medium</item>-->
+    <!--<item name="android:textColor">@color/greenColor</item>-->
+    <!--<item name="android:textStyle">bold</item>-->
+    <!--</style>-->
+
+    <!--<style name="DiscountًText">-->
+    <!--<item name="android:textSize">12sp</item>-->
+    <!--<item name="android:textColor">@color/redColor</item>-->
+    <!--</style>-->
+
+    <style name="MainActivity" parent="PrimaryDarkText.LargeText">
+        <item name="android:gravity">right</item>
+    </style>
+
+
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="font_fanum">fonts/IRANSansMobileFaNum.ttf</string>
+    <string name="font_bold">fonts/IRANSansMobile_Bold.ttf</string>
+    <string name="font_regular">fonts/IRANSansMobile.ttf</string>
+</resources>

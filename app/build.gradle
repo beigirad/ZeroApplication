@@ -1,5 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -8,15 +10,15 @@ android {
 
     def majorVersion = 0
     def minorVersion = 0
-    def patchVersion = 0
+    def patchVersion = 1
 
     defaultConfig {
-        applicationId "ir.beigirad.zeroapplication"
+        applicationId "ir.beigirad.app"
 
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
 
-        versionCode majorVersion * 100000 + minorVersion * 1000 + patchVersion
+        versionCode majorVersion * 10000 + minorVersion * 100 + patchVersion
         versionName "${majorVersion}.${minorVersion}.${patchVersion}"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -68,7 +70,7 @@ android {
 
     splits {
         abi {
-            enable true
+            enable false
             reset()
             include "armeabi-v7a"
         }
@@ -97,17 +99,7 @@ dependencies {
     compile rootProject.ext.libraries.gsonConvertor
     compile rootProject.ext.libraries.stethoOkhttp
 
-
-
-    compile rootProject.ext.libraries.butterKnife
-    annotationProcessor rootProject.ext.libraries.butterKnifeAnnotation
-
-
-
-
-    testCompile rootProject.ext.libraries.junit
-
-    compile rootProject.ext.kotlinLibraries.kotlin
+    compile rootProject.ext.kotlinDependencyJdk
 
 }
 repositories {

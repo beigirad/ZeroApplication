@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ir.beigirad.zeroapplication">
+    package="ir.beigirad.app">
 
     <application
-        android:name=".ZeroApplication"
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -12,21 +12,17 @@
         android:theme="@style/AppTheme.NoActionBar">
 
 
-        <activity android:name=".ui.MainActivity" />
-        <activity android:name=".authentication.LoginActivity" />
+        <activity android:name=".MainActivity" />
 
         <activity-alias
-            android:name="MainActivity"
-            android:targetActivity=".ui.MainActivity">
+            android:name=".MyApplication"
+            android:targetActivity=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
-
-
-
 
     </application>
 
