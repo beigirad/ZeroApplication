@@ -7,13 +7,14 @@ android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
 
+    flavorDimensions "default"
 
     def majorVersion = 0
     def minorVersion = 0
     def patchVersion = 1
 
     defaultConfig {
-        applicationId "ir.beigirad.app"
+        applicationId "ir.beigirad"
 
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
@@ -23,10 +24,37 @@ android {
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    if (project.hasProperty("myproject.properties")) {
+        Properties props = new Properties()
+        props.load(new FileInputStream(file(project.property("myproject.properties"))))
+        signingConfigs {
+            releaseKey {
+                storeFile file(props['storeFile'])
+                storePassword props['storePassword']
+                keyAlias props['keyAlias']
+                keyPassword props['keyPassword']
+            }
+            debugKey {
+                storeFile file(props['storeFile'])
+                storePassword props['storePassword']
+                keyAlias props['keyAlias']
+                keyPassword props['keyPassword']
+            }
+        }
+    }
+
     buildTypes {
         release {
-            minifyEnabled false
+            shrinkResources true
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debugKey
+        }
+
+        debug {
+            signingConfig signingConfigs.debugKey
+            applicationIdSuffix ".debug"
         }
     }
 
@@ -38,32 +66,17 @@ android {
         }
     }
 
-    if (project.hasProperty("myproject.properties") && new File(project.property("myproject.properties")).exists()) {
-        Properties props = new Properties()
-        props.load(new FileInputStream(file(project.property("myproject.properties"))))
-        signingConfigs {
-            release {
-                storeFile file(props['storeFile'])
-                storePassword props['storePassword']
-                keyAlias props['keyAlias']
-                keyPassword props['keyPassword']
-            }
-        }
-    }
-    buildTypes.release.signingConfig = signingConfigs.release
+
+
 
 
     applicationVariants.all { variant ->
-        def appName
-        if (project.hasProperty("applicationName")) {
-            appName = "${applicationName}"
-        } else {
-            appName = parent.name
-        }
-        variant.outputs.each { output ->
-            def newApkFile
-            newApkFile = "${appName}-${output.baseName}-${variant.versionName}.apk"
-            output.outputFile = new File(output.outputFile.parent, newApkFile)
+        def appName = rootProject.name
+        variant.outputs.all { output ->
+            def newApkName = "${appName}-${output.baseName}-${variant.versionName}.apk".toLowerCase()
+            def newApkDir = output.packageApplication.outputDirectory.toPath().relativize(rootDir.toPath()).toFile()
+            newApkDir = "../" //override on baseDirectory
+            output.outputFileName = new File(newApkDir, newApkName)
         }
     }
 
@@ -80,26 +93,20 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
+    implementation rootProject.ext.libraries.appCompat
+    implementation rootProject.ext.libraries.design
+    implementation rootProject.ext.libraries.support
+    implementation rootProject.ext.libraries.cardView
+
+    implementation rootProject.ext.libraries.calligraphy
+    implementation rootProject.ext.libraries.lovelyDialog
 
 
-    compile rootProject.ext.libraries.appCompat
-    compile rootProject.ext.libraries.design
-    compile rootProject.ext.libraries.support
-    compile rootProject.ext.libraries.cardView
+    implementation rootProject.ext.libraries.retrofit
+    implementation rootProject.ext.libraries.gsonConvertor
+    implementation rootProject.ext.libraries.stethoOkhttp
 
-    compile rootProject.ext.libraries.calligraphy
-    compile rootProject.ext.libraries.lovelyDialog
-
-
-    compile rootProject.ext.libraries.retrofit
-    compile rootProject.ext.libraries.gsonConvertor
-    compile rootProject.ext.libraries.stethoOkhttp
-
-    compile rootProject.ext.kotlinDependencyJdk
+    implementation rootProject.ext.kotlinDependencyJdk
 
 }
 repositories {
