@@ -1,13 +1,13 @@
 package ir.beigirad.zeroapplication.widget
 
 import android.graphics.Color
-import android.support.design.widget.CoordinatorLayout
-import android.support.design.widget.Snackbar
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import androidx.coordinatorlayout.widget.CoordinatorLayout
+import com.google.android.material.snackbar.Snackbar
 import ir.beigirad.app.R
 import ir.beigirad.zeroapplication.ZeroApplication
 
@@ -73,8 +73,8 @@ class RtlSnackbar {
         snackbar = Snackbar.make(rootView, text, duration)
         val layout = snackbar!!.view as Snackbar.SnackbarLayout
 
-        val textView = layout.findViewById<View>(android.support.design.R.id.snackbar_text) as TextView
-        textView.visibility = View.INVISIBLE
+//        val textView = layout.findViewById<View>(android.support.design.R.id.snackbar_text) as TextView
+//        textView.visibility = View.INVISIBLE
 
         snackView = LayoutInflater.from(rootView.context).inflate(R.layout.snackbar_custom, null)
 

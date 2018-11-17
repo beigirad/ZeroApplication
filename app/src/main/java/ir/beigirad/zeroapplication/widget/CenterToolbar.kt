@@ -2,10 +2,10 @@ package ir.beigirad.zeroapplication.widget
 
 import android.content.Context
 import android.graphics.Point
-import android.support.v7.widget.Toolbar
 import android.util.AttributeSet
 import android.view.WindowManager
 import android.widget.TextView
+import androidx.appcompat.widget.Toolbar
 import ir.beigirad.app.R
 
 

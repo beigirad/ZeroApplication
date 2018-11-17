@@ -26,11 +26,11 @@ abstract class ResponseWithErrorHandling<R, E> : Callback<ResponseBody> {
 
         try {
             if (response.isSuccessful) {
-                val mResponse = Gson().fromJson<R>(response.body().string(), responseType)
+                val mResponse = Gson().fromJson<R>(response.body()?.string(), responseType)
                 onResponseRequest(call, mResponse)
 
             } else {
-                val mError = Gson().fromJson<E>(response.errorBody().string(), errorType)
+                val mError = Gson().fromJson<E>(response.errorBody()?.string(), errorType)
                 onErrorRequest(call, mError)
             }
 

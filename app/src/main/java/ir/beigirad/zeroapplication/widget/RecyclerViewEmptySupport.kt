@@ -2,11 +2,11 @@ package ir.beigirad.zeroapplication.widget
 
 import android.content.Context
 import android.graphics.Rect
-import android.support.v7.widget.RecyclerView
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewConfiguration
+import androidx.recyclerview.widget.RecyclerView
 
 /**
  * Created by farhad-mbp on 8/27/17.

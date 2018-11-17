@@ -11,12 +11,14 @@ import android.util.AttributeSet;
 import android.view.Gravity;
 import android.widget.TextView;
 
+import androidx.appcompat.widget.AppCompatTextView;
+
 /**
  * Created by farhad-mbp on 8/25/17.
  */
 
 @SuppressWarnings("DefaultFileTemplate")
-public class JustifyTextView extends android.support.v7.widget.AppCompatTextView {
+public class JustifyTextView extends AppCompatTextView {
     private Paint paint = new Paint();
 
     private String[] blocks;

@@ -45,7 +45,8 @@ dependencies {
     implementation(SupportLibraries.constraintlayout)
 
     implementation(Libraries.retrofit)
-    implementation(Libraries.moshiConverter)
+    implementation(Libraries.gsonConverter)
+    implementation(Libraries.stethoInterceptor)
     implementation(Libraries.rxjavaAdapter)
 
     implementation(Libraries.timber)

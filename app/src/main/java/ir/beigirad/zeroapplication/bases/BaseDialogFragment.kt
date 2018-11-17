@@ -4,12 +4,12 @@ package ir.beigirad.zeroapplication.bases
 import android.app.Dialog
 import android.app.ProgressDialog
 import android.os.Bundle
-import androidx.core.app.DialogFragment
-import android.support.v7.widget.Toolbar
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
+import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.DialogFragment
 import ir.beigirad.app.R
 import ir.beigirad.zeroapplication.network.RequestProvider
 import ir.beigirad.zeroapplication.util.Utils
@@ -28,7 +28,7 @@ abstract class BaseDialogFragment : DialogFragment() {
     private lateinit var progressDialog: ProgressDialog
 
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
         val rootView = inflater!!.inflate(childView, container, false)
@@ -37,7 +37,7 @@ abstract class BaseDialogFragment : DialogFragment() {
         return rootView
     }
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initToolbar()
         initUI()

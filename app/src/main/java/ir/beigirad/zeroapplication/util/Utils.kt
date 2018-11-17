@@ -1,6 +1,7 @@
 package ir.beigirad.zeroapplication.util
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.annotation.TargetApi
 import android.app.Activity
 import android.content.ClipData
@@ -18,15 +19,9 @@ import android.graphics.drawable.Drawable
 import android.graphics.drawable.VectorDrawable
 import android.hardware.fingerprint.FingerprintManager
 import android.os.Build
-import android.support.annotation.DrawableRes
-import android.support.design.widget.TabLayout
-import android.support.design.widget.TextInputEditText
-import android.support.design.widget.TextInputLayout
-import android.support.graphics.drawable.VectorDrawableCompat
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.hardware.fingerprint.FingerprintManagerCompat
-import android.support.v7.widget.AppCompatImageView
 import android.text.InputType
 import android.util.DisplayMetrics
 import android.view.View
@@ -35,6 +30,12 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.DrawableRes
+import androidx.appcompat.widget.AppCompatImageView
+import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 import ir.beigirad.app.BuildConfig
 import ir.beigirad.app.R
 import ir.beigirad.zeroapplication.ZeroApplication
@@ -194,7 +195,7 @@ class Utils {
             }
         }
 
-        fun getDrawable(context: Context, @DrawableRes drawableResId: Int): Drawable {
+        fun getDrawable(context: Context?, @DrawableRes drawableResId: Int): Drawable {
             val img = AppCompatImageView(context)
             img.setImageResource(drawableResId)
             //        return ContextCompat.getDrawable(context, drawableResId);
@@ -225,6 +226,7 @@ class Utils {
             return formatedDate.substring(0, formatedDate.indexOf('T')).replace('-', '/')
         }
 
+        @SuppressLint("MissingPermission")
         fun isFingerSensorAvialable(): Boolean {
             return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 ActivityCompat.checkSelfPermission(ZeroApplication.getAppContext(),

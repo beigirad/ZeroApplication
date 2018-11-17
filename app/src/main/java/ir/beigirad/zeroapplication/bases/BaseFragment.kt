@@ -2,10 +2,10 @@ package ir.beigirad.zeroapplication.bases
 
 import android.app.ProgressDialog
 import android.os.Bundle
-import androidx.core.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import ir.beigirad.app.R
 import ir.beigirad.zeroapplication.network.RequestProvider
 
@@ -20,7 +20,7 @@ abstract class BaseFragment : Fragment() {
 
     private lateinit var progressDialog: ProgressDialog
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
         val rootView = inflater!!.inflate(childView, container, false)
@@ -29,7 +29,7 @@ abstract class BaseFragment : Fragment() {
         return rootView
     }
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initUI()
     }

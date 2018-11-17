@@ -52,6 +52,7 @@ object Versions {
     val rxkotlin = "2.3.0"
     val retrofit = "2.4.0"
     val loggingInterceptor = "3.11.0"
+    val stethoInterceptor = "1.5.0"
     val glide = "4.8.0"
     val rxpaper = "1.2.0"
     val moshi = "1.4.0"
@@ -82,6 +83,7 @@ object Libraries {
     val moshiConverter = "com.squareup.retrofit2:converter-moshi:${Versions.retrofit}"
     val gsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
     val loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.loggingInterceptor}"
+    val stethoInterceptor = "com.facebook.stetho:stetho-okhttp3:${Versions.stethoInterceptor}"
 
     val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
     val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.glide}"
