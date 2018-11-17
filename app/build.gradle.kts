@@ -44,6 +44,14 @@ dependencies {
     implementation(SupportLibraries.design)
     implementation(SupportLibraries.constraintlayout)
 
+    implementation(Libraries.retrofit)
+    implementation(Libraries.moshiConverter)
+    implementation(Libraries.rxjavaAdapter)
+
+    implementation(Libraries.timber)
+
+
+
     implementation(Libraries.kotlin)
 
 }
