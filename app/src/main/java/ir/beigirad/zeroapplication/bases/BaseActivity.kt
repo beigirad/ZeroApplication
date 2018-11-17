@@ -12,7 +12,6 @@ import android.view.View
 import ir.beigirad.app.R
 import ir.beigirad.zeroapplication.util.SharedPrefUtils
 import ir.beigirad.zeroapplication.widget.CenterToolbar
-import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper
 
 
 /**
@@ -54,9 +53,6 @@ abstract class BaseActivity : AppCompatActivity() {
         initUI()
     }
 
-    override fun attachBaseContext(newBase: Context) {
-        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase))
-    }
 
     private var isRtl: Boolean = false
 

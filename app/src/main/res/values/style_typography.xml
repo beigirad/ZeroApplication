@@ -27,7 +27,6 @@
     <style name="PrimaryDarkText.XLargeText">
         <item name="android:textSize">@dimen/text_xlarge</item>
         <item name="android:textStyle">bold</item>
-        <item name="fontPath">@string/font_bold</item>
     </style>
 
     <style name="PrimaryDarkText.LargeText">
@@ -71,31 +70,25 @@
 
 
     <style name="LightText.MediumText.Bold">
-        <item name="fontPath">@string/font_bold</item>
     </style>
 
     <style name="LightText.XLargeText.Bold">
-        <item name="fontPath">@string/font_bold</item>
     </style>
 
     <style name="LightText.LargeText.Bold">
-        <item name="fontPath">@string/font_bold</item>
     </style>
 
     <style name="PrimaryDarkText.LargeText.Bold">
-        <item name="fontPath">@string/font_bold</item>
     </style>
 
     <style name="PrimaryDarkText.MediumText.Bold">
-        <item name="fontPath">@string/font_bold</item>
     </style>
 
     <style name="PrimaryDarkText.Small.Bold">
-        <item name="fontPath">@string/font_bold</item>
+
     </style>
 
     <style name="SecondaryDarkText.Small.Bold">
-        <item name="fontPath">@string/font_bold</item>
     </style>
 
 

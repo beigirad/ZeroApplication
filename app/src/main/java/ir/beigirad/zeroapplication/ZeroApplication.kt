@@ -4,7 +4,6 @@ import android.app.Application
 import android.content.Context
 import android.graphics.Typeface
 import ir.beigirad.app.R
-import uk.co.chrisjenx.calligraphy.CalligraphyConfig
 
 /**
  * Created by farhad-mbp on 11/4/17.
@@ -16,10 +15,6 @@ open class ZeroApplication : Application() {
         super.onCreate()
         mContext = applicationContext
 
-        CalligraphyConfig.initDefault(CalligraphyConfig.Builder()
-                .setDefaultFontPath(getString(R.string.font_regular))
-                .setFontAttrId(R.attr.fontPath)
-                .build())
     }
 
     companion object {

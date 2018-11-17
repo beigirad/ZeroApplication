@@ -47,13 +47,11 @@
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.ActionBar">
-        <item name="fontPath">@string/font_bold</item>
         <item name="android:layout_gravity">center</item>
         <item name="android:textSize">19sp</item>
     </style>
 
     <style name="ToolbarTitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
-        <item name="fontPath">@string/font_bold</item>
         <item name="android:textSize">19sp</item>
     </style>
 
