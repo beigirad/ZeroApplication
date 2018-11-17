@@ -5,10 +5,10 @@ import android.content.Context
 import android.content.pm.ActivityInfo
 import android.os.Build
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import ir.beigirad.app.R
 import ir.beigirad.zeroapplication.util.SharedPrefUtils
 import ir.beigirad.zeroapplication.widget.CenterToolbar

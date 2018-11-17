@@ -23,9 +23,9 @@ import android.support.design.widget.TabLayout
 import android.support.design.widget.TextInputEditText
 import android.support.design.widget.TextInputLayout
 import android.support.graphics.drawable.VectorDrawableCompat
-import android.support.v4.app.ActivityCompat
-import android.support.v4.content.ContextCompat
-import android.support.v4.hardware.fingerprint.FingerprintManagerCompat
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import androidx.core.hardware.fingerprint.FingerprintManagerCompat
 import android.support.v7.widget.AppCompatImageView
 import android.text.InputType
 import android.util.DisplayMetrics

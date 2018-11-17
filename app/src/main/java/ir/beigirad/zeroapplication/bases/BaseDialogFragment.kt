@@ -4,7 +4,7 @@ package ir.beigirad.zeroapplication.bases
 import android.app.Dialog
 import android.app.ProgressDialog
 import android.os.Bundle
-import android.support.v4.app.DialogFragment
+import androidx.core.app.DialogFragment
 import android.support.v7.widget.Toolbar
 import android.view.LayoutInflater
 import android.view.View
