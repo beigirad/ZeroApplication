@@ -6,5 +6,7 @@ BaseApplication for my personal Android applications
 - [X] Kotlin-DSL
 - [X] AndroidX
 - [X] Upgrade Dependencies
-- [ ] Rename Apk
-- [ ] Auto Signing
+- [ ] Gradle Configuration(Rename Apk,Auto Signing)
+- [ ] Repository
+- [ ] Dependency Injection
+- [ ] Migrate on MVVM
