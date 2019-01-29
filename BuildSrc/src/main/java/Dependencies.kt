@@ -1,7 +1,7 @@
-package ir.beigiead
+package ir.beigiead.dependencies
 
 object ApplicationId {
-    val id = "ir.joojmooj"
+    val id = "ir.beigirad.zeroapp"
 }
 
 object Modules {
@@ -17,19 +17,20 @@ object Modules {
 
 object Releases {
     private val major = 0
-    private val minor = 0
-    private val patch = 1
+    private val minor = 1
+    private val patch = 0
 
     val versionCode = major * 10000 + minor * 100 + patch
-    val versionName = "${major}.${minor}.${patch}"
+    val versionName = "$major.$minor.$patch"
 }
 
 object Versions {
     val gradle = "3.2.1"
+    val multidex = "1.0.3"
 
     val compileSdk = 28
     val buildTools = "28.0.3"
-    val minSdk = 21
+    val minSdk = 16
     val targetSdk = 28
 
     val googleServices = "4.0.1"
@@ -47,9 +48,10 @@ object Versions {
 
     val ktx = "1.0.0-alpha1"
 
-    val kotlin = "1.3.10"
+    val kotlin = "1.3.20"
     val timber = "4.7.1"
     val rxkotlin = "2.3.0"
+    val rxAndroid = "2.1.0"
     val retrofit = "2.4.0"
     val loggingInterceptor = "3.11.0"
     val stethoInterceptor = "1.5.0"
@@ -57,9 +59,11 @@ object Versions {
     val rxpaper = "1.2.0"
     val moshi = "1.4.0"
     val lifecycle = "2.0.0"
+    val room = "2.1.0-alpha03"
     val leakCanary = "1.6.2"
     val crashlytics = "2.9.6"
     val koin = "1.0.2"
+    val grpc = "1.16.1"
 
     val junit = "4.12"
     val assertjCore = "3.11.1"
@@ -69,15 +73,18 @@ object Versions {
 }
 
 object Libraries {
-    val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${Versions.kotlin}"
+    val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
 
     val ktx = "androidx.core:core-ktx:${Versions.ktx}"
+
+    val multidex = "com.android.support:multidex:${Versions.multidex}"
 
     val maps = "com.google.android.gms:play-services-maps:${Versions.maps}"
 
     val timber = "com.jakewharton.timber:timber:${Versions.timber}"
 
     val rxkotlin = "io.reactivex.rxjava2:rxkotlin:${Versions.rxkotlin}"
+    val rxAndroid = "io.reactivex.rxjava2:rxandroid:${Versions.rxAndroid}"
 
     val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     val rxjavaAdapter = "com.squareup.retrofit2:adapter-rxjava2:${Versions.retrofit}"
@@ -92,8 +99,16 @@ object Libraries {
     val rxpaper = "com.github.pakoito:RxPaper2:${Versions.rxpaper}"
     val moshi = "com.squareup.moshi:moshi:${Versions.moshi}"
 
+    val lifecucleRuntime = "androidx.lifecycle:lifecycle-runtime:${Versions.lifecycle}"
     val lifecycleExtensions = "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycle}"
     val lifecycleCompiler = "androidx.lifecycle:lifecycle-compiler:${Versions.lifecycle}"
+    val archViewModel = "androidx.lifecycle:lifecycle-viewmodel:${Versions.lifecycle}"
+    val archLiveData = "androidx.lifecycle:lifecycle-livedata:${Versions.lifecycle}"
+
+    val room="androidx.room:room-runtime:${Versions.room}"
+    val roomCompiler="androidx.room:room-compiler:${Versions.room}"
+    val roomRx="androidx.room:room-rxjava2:${Versions.room}"
+
 
     val leakCanaryAndroid = "com.squareup.leakcanary:leakcanary-android:${Versions.leakCanary}"
     val leakCanaryAndroidNoOp = "com.squareup.leakcanary:leakcanary-android-no-op:${Versions.leakCanary}"
