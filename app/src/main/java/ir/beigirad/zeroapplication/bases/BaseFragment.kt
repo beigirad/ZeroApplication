@@ -7,26 +7,22 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import ir.beigirad.app.R
-import ir.beigirad.zeroapplication.network.RequestProvider
 
 /**
  * Created by farhad-mbp on 9/12/17.
  */
 
 abstract class BaseFragment : Fragment() {
-    protected var rootView: View? = null
 
     protected abstract val childView: Int
 
     private lateinit var progressDialog: ProgressDialog
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-
-        val rootView = inflater!!.inflate(childView, container, false)
-        this.rootView = rootView
-
-        return rootView
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(childView, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -46,16 +42,8 @@ abstract class BaseFragment : Fragment() {
     }
 
 
-    protected open fun normalDetach(): Boolean {
-        return false
-    }
-
     override fun onDetach() {
-        if (!normalDetach()) {
-            progressDialog.dismiss()
-            rootView = null
-            RequestProvider.instance.cancellAll()
-        }
+        progressDialog.dismiss()
         super.onDetach()
     }
 

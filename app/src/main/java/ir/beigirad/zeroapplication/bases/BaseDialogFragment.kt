@@ -11,7 +11,6 @@ import android.view.Window
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.DialogFragment
 import ir.beigirad.app.R
-import ir.beigirad.zeroapplication.network.RequestProvider
 import ir.beigirad.zeroapplication.util.Utils
 
 /**
@@ -19,7 +18,6 @@ import ir.beigirad.zeroapplication.util.Utils
  */
 
 abstract class BaseDialogFragment : DialogFragment() {
-    protected var rootView: View? = null
 
     protected abstract val childView: Int
     protected abstract val toolbarTitle: CharSequence
@@ -28,13 +26,11 @@ abstract class BaseDialogFragment : DialogFragment() {
     private lateinit var progressDialog: ProgressDialog
 
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-
-        val rootView = inflater!!.inflate(childView, container, false)
-        this.rootView = rootView
-
-        return rootView
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(childView, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -49,9 +45,12 @@ abstract class BaseDialogFragment : DialogFragment() {
     protected open fun initToolbar() {
         this.toolbar.title = toolbarTitle
         when {
-            Utils.isTablet -> this.toolbar.navigationIcon = Utils.getDrawable(context, R.drawable.item_black_cross_icon)
-            beFullScreen() -> this.toolbar.navigationIcon = Utils.getDrawable(context, R.drawable.item_back_button)
-            else -> this.toolbar.navigationIcon = Utils.getDrawable(context, R.drawable.item_black_cross_icon)
+            Utils.isTablet -> this.toolbar.navigationIcon =
+                    Utils.getDrawable(context, R.drawable.item_black_cross_icon)
+            beFullScreen() -> this.toolbar.navigationIcon =
+                    Utils.getDrawable(context, R.drawable.item_back_button)
+            else -> this.toolbar.navigationIcon =
+                    Utils.getDrawable(context, R.drawable.item_black_cross_icon)
         }
 
 
@@ -81,10 +80,6 @@ abstract class BaseDialogFragment : DialogFragment() {
         return true
     }
 
-    protected open fun normalDetach(): Boolean {
-        return false
-    }
-
     protected open fun initVariables() {
         progressDialog = ProgressDialog(context)
         progressDialog.setMessage(getString(R.string.please_wait))
@@ -95,25 +90,10 @@ abstract class BaseDialogFragment : DialogFragment() {
         return true
     }
 
-
     override fun dismiss() {
+        progressDialog.dismiss()
         super.dismiss()
     }
-
-    override fun onDestroy() {
-        super.onDestroy()
-
-    }
-
-    override fun onDetach() {
-        if (!normalDetach()) {
-            progressDialog.dismiss()
-            rootView = null
-            RequestProvider.instance.cancellAll()
-        }
-        super.onDetach()
-    }
-
 
     protected open fun showProgress() {
         progressDialog.show()

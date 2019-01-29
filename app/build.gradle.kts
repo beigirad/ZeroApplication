@@ -20,6 +20,8 @@ android {
         targetSdkVersion(Versions.targetSdk)
         versionCode = Releases.versionCode
         versionName = Releases.versionName
+
+        vectorDrawables.useSupportLibrary = true
     }
 
     project.property("keystore.dir")?.also { dir ->
@@ -76,9 +78,12 @@ android {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
+    implementation(Libraries.kotlin)
+
     implementation(SupportLibraries.appcompat)
     implementation(SupportLibraries.design)
     implementation(SupportLibraries.constraintlayout)
+    implementation(SupportLibraries.recyclerview)
 
     implementation(Libraries.retrofit)
     implementation(Libraries.gsonConverter)
@@ -87,8 +92,6 @@ dependencies {
 
     implementation(Libraries.timber)
 
-
-
-    implementation(Libraries.kotlin)
-
+    implementation(Libraries.glide)
+    kapt(Libraries.glideCompiler)
 }
