@@ -36,6 +36,8 @@ abstract class BaseActivity : AppCompatActivity() {
 
     protected abstract val toolbar: CenterToolbar?
 
+    protected open val hasBackConfirmation = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(contentView)
@@ -123,6 +125,16 @@ abstract class BaseActivity : AppCompatActivity() {
 
     protected open fun hideProgress() {
         progressDialog.hide()
+    }
+
+    private var lastBackPressed = -1L
+    override fun onBackPressed() {
+        if (hasBackConfirmation && System.currentTimeMillis() - lastBackPressed > 1500)
+            toast(R.string.press_back_twice)
+        else
+            super.onBackPressed()
+        lastBackPressed = System.currentTimeMillis()
+
     }
 
 }
