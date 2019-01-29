@@ -1,34 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="buttonTheme" parent="@android:style/Widget.Button">
+    <style name="ButtonStyle" parent="@android:style/Widget.Button">
         <item name="android:gravity">center</item>
         <item name="android:textColor">@color/icons</item>
-        <item name="android:textSize">@dimen/text_large</item>
+        <item name="android:textSize">@dimen/text_medium</item>
         <item name="android:foreground">@drawable/ripple_effect</item>
         <item name="android:focusable">true</item>
         <item name="android:clickable">true</item>
+        <item name="android:paddingRight">@dimen/button_side_padding</item>
+        <item name="android:height">@dimen/button_default_height</item>
+        <item name="android:paddingLeft">@dimen/button_side_padding</item>
+        <!--<item name="android:textStyle">bold</item>-->
     </style>
 
-    <style name="buttonTheme.Stroke">
-        <item name="android:background">@drawable/button_stroke_accent</item>
+    <style name="ButtonStyle.Stroke">
+        <item name="android:background">@drawable/button_stroke_background</item>
         <item name="android:textColor">@color/colorAccent</item>
     </style>
 
-    <style name="buttonTheme.FillColor">
+    <style name="ButtonStyle.FillColor">
         <item name="android:background">@drawable/button_fill_background</item>
-        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textColor">@color/primary_text_light</item>
     </style>
 
-    <style name="buttonTheme.Transparent">
+    <style name="ButtonStyle.Transparent">
         <item name="android:background">@null</item>
-        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textColor">@color/primary_text_light</item>
     </style>
 
-    <style name="buttonTheme.Flat" parent="buttonTheme">
-        <item name="android:background">@color/colorAccent</item>
-        <item name="android:textColor">#fff</item>
-
+    <style name="ButtonStyle.Flat">
+        <item name="android:background">@drawable/button_flat_background</item>
+        <item name="android:textColor">@color/primary_text_light</item>
     </style>
 
 </resources>

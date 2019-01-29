@@ -13,9 +13,8 @@
         <item name="toolbarStyle">@style/ToolbarTheme</item>
         <item name="android:toolbarStyle" tools:targetApi="lollipop">@style/ToolbarTheme</item>
 
-        <item name="buttonStyle">@style/buttonTheme.FillColor</item>
-        <item name="android:buttonStyle" tools:targetApi="lollipop">@style/buttonTheme.FillColor
-        </item>
+        <item name="buttonStyle">@style/ButtonStyle.FillColor</item>
+        <item name="android:buttonStyle" tools:targetApi="lollipop">@style/ButtonStyle.FillColor</item>
 
         <item name="android:fontFamily">@font/vazir</item>
         <item name="fontFamily">@font/vazir</item>
