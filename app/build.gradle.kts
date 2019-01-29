@@ -1,4 +1,6 @@
 import ir.beigiead.dependencies.*
+import java.util.*
+import java.io.*
 
 plugins {
     id("com.android.application")
@@ -20,17 +22,40 @@ android {
         versionName = Releases.versionName
     }
 
+    project.property("keystore.dir")?.also { dir ->
+        Properties().also { it ->
+            it.load(FileInputStream(file(dir)))
+
+            signingConfigs {
+
+                create("debugKey") {
+                    storeFile = file(it["dStoreFile"]!!)
+                    storePassword = it["dStorePassword"] as String
+                    keyAlias = it["dKeyAlias"] as String
+                    keyPassword = it["dKeyPassword"] as String
+                }
+
+                create("releaseKey") {
+                    storeFile = file(it["rStoreFile"]!!)
+                    storePassword = it["rStorePassword"] as String
+                    keyAlias = it["rKeyAlias"] as String
+                    keyPassword = it["rKeyPassword"] as String
+                }
+            }
+        }
+    }
+
     buildTypes {
         getByName("release") {
             isShrinkResources = true
             isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
-//            signingConfig = SigningConfigs.releaseKey
+            signingConfig = signingConfigs.getByName("releaseKey")
         }
 
         getByName("debug") {
             applicationIdSuffix = ".debug"
-//            signingConfig = SigningConfigs.debugKey
+            signingConfig = signingConfigs.getByName("debugKey")
         }
     }
 
