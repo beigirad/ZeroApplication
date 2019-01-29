@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <style name="TypographyStyle" parent="TextAppearance.AppCompat">
-        <!-- Hint color and label color in FALSE state -->
-        <item name="android:textColorHint">#229922</item>
-        <item name="android:textSize">20sp</item>
-        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="android:textColorHint">@color/icons_active</item>
+        <item name="android:textSize">@dimen/text_medium</item>
+
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorControlNormal">@color/icons</item>
         <item name="colorControlActivated">@color/icons_active</item>
@@ -24,88 +22,72 @@
     </style>
 
 
-    <style name="PrimaryDarkText.XLargeText">
-        <item name="android:textSize">@dimen/text_xlarge</item>
-        <item name="android:textStyle">bold</item>
-    </style>
-
-    <style name="PrimaryDarkText.LargeText">
+    //  *********** NORMAL STYLE ***********
+    //  Primary Color
+    <style name="PrimaryDarkText.Large">
         <item name="android:textSize">@dimen/text_large</item>
     </style>
-
-    <style name="PrimaryDarkText.MediumText">
+    <style name="PrimaryDarkText.Medium">
         <item name="android:textSize">@dimen/text_medium</item>
     </style>
-
     <style name="PrimaryDarkText.Small">
         <item name="android:textSize">@dimen/text_small</item>
     </style>
 
-
-    <style name="SecondaryDarkText.MediumText">
+    //  Secondary Color
+    <style name="SecondaryDarkText.Large">
+        <item name="android:textSize">@dimen/text_large</item>
+    </style>
+    <style name="SecondaryDarkText.Medium">
         <item name="android:textSize">@dimen/text_medium</item>
     </style>
-
     <style name="SecondaryDarkText.Small">
         <item name="android:textSize">@dimen/text_small</item>
     </style>
 
-
-    <style name="LightText.XLargeText">
-        <item name="android:textSize">@dimen/text_xlarge</item>
-        <item name="android:textStyle">bold</item>
-    </style>
-
-    <style name="LightText.LargeText">
+    //  Light Color
+    <style name="LightText.Large">
         <item name="android:textSize">@dimen/text_large</item>
     </style>
-
-    <style name="LightText.MediumText">
+    <style name="LightText.Medium">
         <item name="android:textSize">@dimen/text_medium</item>
     </style>
-
     <style name="LightText.Small">
         <item name="android:textSize">@dimen/text_small</item>
     </style>
 
-
-    <style name="LightText.MediumText.Bold">
+    //  *********** BOLD STYLE ***********
+    //  Primary Color
+    <style name="PrimaryDarkText.Large.Bold">
+        <item name="android:textStyle">bold</item>
     </style>
-
-    <style name="LightText.XLargeText.Bold">
+    <style name="PrimaryDarkText.Medium.Bold">
+        <item name="android:textStyle">bold</item>
     </style>
-
-    <style name="LightText.LargeText.Bold">
-    </style>
-
-    <style name="PrimaryDarkText.LargeText.Bold">
-    </style>
-
-    <style name="PrimaryDarkText.MediumText.Bold">
-    </style>
-
     <style name="PrimaryDarkText.Small.Bold">
-
+        <item name="android:textStyle">bold</item>
     </style>
 
+    //  Secondary Color
+    <style name="SecondaryDarkText.Large.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="SecondaryDarkText.Medium.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
     <style name="SecondaryDarkText.Small.Bold">
+        <item name="android:textStyle">bold</item>
     </style>
 
-
-    <!--<style name="PriceText">-->
-    <!--<item name="android:textSize">@dimen/text_medium</item>-->
-    <!--<item name="android:textColor">@color/greenColor</item>-->
-    <!--<item name="android:textStyle">bold</item>-->
-    <!--</style>-->
-
-    <!--<style name="DiscountًText">-->
-    <!--<item name="android:textSize">12sp</item>-->
-    <!--<item name="android:textColor">@color/redColor</item>-->
-    <!--</style>-->
-
-    <style name="MainActivity" parent="PrimaryDarkText.LargeText">
-        <item name="android:gravity">right</item>
+    //  Light Color
+    <style name="LightText.Large.Bold">
+        <item name="android:textStyle">bold</item>
     </style>
-
+    <style name="LightText.Medium.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="LightText.Small.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
 
 </resources>
