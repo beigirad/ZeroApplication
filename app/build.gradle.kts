@@ -1,5 +1,4 @@
-import com.android.build.gradle.internal.dsl.SigningConfig
-import ir.beigiead.*
+import ir.beigiead.dependencies.*
 
 plugins {
     id("com.android.application")
