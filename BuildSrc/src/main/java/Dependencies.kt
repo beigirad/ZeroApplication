@@ -65,6 +65,7 @@ object Versions {
     val assertjCore = "3.11.1"
     val mockitoKotlin = "2.0.0-RC1"
     val mockitoInline = "2.23.0"
+    val dagger = "2.16"
 }
 
 object Libraries {
@@ -101,6 +102,12 @@ object Libraries {
     val crashlytics = "com.crashlytics.sdk.android:crashlytics:${Versions.crashlytics}"
 
     val koinViewModel = "org.koin:koin-android-viewmodel:${Versions.koin}"
+
+    val dagger = "com.google.dagger:dagger:${Versions.dagger}"
+    val daggerCompiler = "com.google.dagger:dagger-compiler:${Versions.dagger}"
+    val daggerAndroid = "com.google.dagger:dagger-android:${Versions.dagger}"
+    val daggerAndroidProcessor = "com.google.dagger:dagger-android-processor:${Versions.dagger}"
+    val daggerAndroidSupport = "com.google.dagger:dagger-android-support:${Versions.dagger}"
 }
 
 object SupportLibraries {
