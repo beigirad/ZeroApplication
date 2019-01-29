@@ -2,8 +2,10 @@ package ir.beigirad.zeroapplication.widget
 
 import android.content.Context
 import android.graphics.Point
+import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.view.WindowManager
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import ir.beigirad.app.R
@@ -13,20 +15,31 @@ import ir.beigirad.app.R
  * Created by farhad-mbp on 1/25/18.
  */
 class CenterToolbar : Toolbar {
-    constructor(context: Context) : super(context)
-    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
-    constructor(context: Context, attrs: AttributeSet?, defStyle: Int) : super(context, attrs, defStyle)
+    constructor(context: Context) : super(context) {
+        init()
+    }
 
-    private var _titleTextView: TextView
+    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {
+        init()
+    }
+
+    constructor(context: Context, attrs: AttributeSet?, defStyle: Int) : super(context, attrs, defStyle) {
+        init()
+    }
+
+    private lateinit var _titleTextView: TextView
+    private lateinit var _imgView: ImageView
     private var _screenWidth: Int = 0
     private var _centerTitle = true
 
-    init {
+    private fun init() {
         _screenWidth = getScreenSize().x
-        _titleTextView = TextView(context)
-        _titleTextView.setTextAppearance(context, R.style.ToolbarTitleText)
-//        CalligraphyUtils.applyFontToTextView(context, _titleTextView, context.getString(R.string.font_bold))
+        _titleTextView = TextView(context, null, R.style.ToolbarTitleText)
+        _imgView = ImageView(context)
+        _imgView.adjustViewBounds = true
+
         addView(_titleTextView)
+        addView(_imgView)
 
     }
 
@@ -36,18 +49,46 @@ class CenterToolbar : Toolbar {
         if (_centerTitle) {
             val location = IntArray(2)
             _titleTextView.getLocationOnScreen(location)
-            _titleTextView.translationX = _titleTextView.translationX + (-location[0] + _screenWidth / 2 - _titleTextView.width / 2)
+            _titleTextView.translationX = _titleTextView.translationX +
+                    (-location[0] + _screenWidth / 2 - _titleTextView.width / 2)
+
+            val location2 = IntArray(2)
+            _imgView.getLocationOnScreen(location2)
+            _imgView.translationX = _imgView.translationX +
+                    (-location2[0] + _screenWidth / 2 - _imgView.width / 2)
         }
     }
 
-    override fun setTitle(title: CharSequence?) {
-        super.setTitle("")
-        _titleTextView.text = title
+
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+        _imgView.layoutParams = _imgView.layoutParams.apply {
+            this.height = (measuredHeight * 0.6).toInt()
+        }
+
+    }
+
+    override fun setLogo(drawable: Drawable?) {
+        super.setLogo(null)
+        _imgView.setImageDrawable(drawable)
         requestLayout()
     }
 
+    override fun setLogo(resId: Int) {
+        super.setLogo(null)
+        _imgView.setImageResource(resId)
+        requestLayout()
+    }
+
+    override fun setTitle(title: CharSequence?) {
+        super.setTitle(null)
+        _titleTextView.text = title
+        requestLayout()
+
+    }
+
     override fun setTitle(resId: Int) {
-        super.setTitle("")
+        super.setTitle(null)
         _titleTextView.text = title
         requestLayout()
     }

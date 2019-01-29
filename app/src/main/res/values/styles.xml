@@ -39,30 +39,11 @@
 
     </style>
 
-
     <style name="AppTheme.NoActionBar.BaseDialog">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowIsFloating">true</item>
         <item name="android:windowMinWidthMajor">@dimen/dialog_width_percent</item>
         <item name="android:windowMinWidthMinor">@dimen/dialog_width_percent</item>
     </style>
-
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.ActionBar">
-        <item name="android:layout_gravity">center</item>
-        <item name="android:textSize">19sp</item>
-    </style>
-
-    <style name="ToolbarTitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
-        <item name="android:textSize">19sp</item>
-    </style>
-
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
-    <style name="ToolbarTheme" parent="@style/Widget.AppCompat.Toolbar">
-        <item name="contentInsetStart">0dp</item>
-        <item name="android:contentInsetStart" tools:targetApi="lollipop">0dp</item>
-    </style>
-
-
 
 </resources>

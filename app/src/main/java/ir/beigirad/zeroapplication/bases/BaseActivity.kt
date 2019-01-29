@@ -1,7 +1,6 @@
 package ir.beigirad.zeroapplication.bases
 
 import android.app.ProgressDialog
-import android.content.Context
 import android.content.pm.ActivityInfo
 import android.os.Build
 import android.os.Bundle
@@ -9,9 +8,10 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import ir.beigirad.app.R
+import ir.beigirad.zeroapplication.toast
 import ir.beigirad.zeroapplication.util.SharedPrefUtils
-import ir.beigirad.zeroapplication.widget.CenterToolbar
 
 
 /**
@@ -32,9 +32,10 @@ abstract class BaseActivity : AppCompatActivity() {
 
     protected abstract val contentView: Int
 
-    protected abstract val toolbarTitle: CharSequence?
+    protected abstract val toolbar: Toolbar?
 
-    protected abstract val toolbar: CenterToolbar?
+    protected open val toolbarTitle: Int? = null
+    protected open val toolbarLogo: Int? = null
 
     protected open val hasBackConfirmation = false
 
@@ -61,7 +62,6 @@ abstract class BaseActivity : AppCompatActivity() {
 
     protected open fun initVariables() {
         parentView = findViewById(android.R.id.content)
-        sharedPref = SharedPrefUtils()
 
         progressDialog = ProgressDialog(this)
         progressDialog.setMessage(getString(R.string.please_wait))
@@ -75,8 +75,11 @@ abstract class BaseActivity : AppCompatActivity() {
     protected open fun initToolbar(hasBack: Boolean = true) {
         if (toolbar == null)
             return
-        toolbar?.title = toolbarTitle
+        toolbarTitle?.let { toolbar?.setTitle(it) }
+        toolbarLogo?.let { toolbar?.setLogo(it) }
+
         setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(toolbarTitle != null)
 
         if (hasBack) {
             supportActionBar!!.setDisplayHomeAsUpEnabled(true)

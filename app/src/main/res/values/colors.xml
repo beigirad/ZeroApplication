@@ -15,6 +15,8 @@
     <color name="primary_text_light">#fff</color>
     <color name="secondary_text_light">#a9ffffff</color>
 
+    <color name="toolbar_text">#fff</color>
+
     <color name="okButtonColor">#4caf50</color>
     <color name="greenColor">#4caf50</color>
 
