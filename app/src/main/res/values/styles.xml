@@ -17,6 +17,9 @@
         <item name="android:buttonStyle" tools:targetApi="lollipop">@style/buttonTheme.FillColor
         </item>
 
+        <item name="android:fontFamily">@font/vazir</item>
+        <item name="fontFamily">@font/vazir</item>
+
     </style>
 
     <style name="AppTheme.NoActionBar" parent="AppTheme">
