@@ -59,6 +59,18 @@ android {
         }
     }
 
+    flavorDimensions("default")
+    productFlavors {
+        create("production") {
+            flavorDimensions("default")
+        }
+
+        create("staging") {
+            flavorDimensions("default")
+            versionNameSuffix = "S"
+        }
+    }
+
 }
 
 dependencies {
